@@ -227,6 +227,14 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <p>{{user.name}}</p>
+      {{title}}
+      <br>
+      <input [type]="[inputType]" [value]="user.name">
+      <!-- <input [type]="'text'" [value]="user.name"> -->
+      <button type="button" (click)="handler()">Click</button>
+      <br>
+      <!-- <input type="text" [{ngModel}]="title"> -->
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
