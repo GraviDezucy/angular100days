@@ -1,9 +1,10 @@
-<app-hello></app-hello>
-<p>Hello {{ user.name }}, ban {{ 24 }} tuoi</p>
-
-<input [type]="inputType" [value]="user.name" />
-
-<button type="button" (click)="Click($event)">Click Me</button>
+<!-- <app-hello *ngIf="user.age >= 18; else under18" [name]="user.name"></app-hello> -->
+<app-hello [hidden]="user.age < 18" [name]="user.name"></app-hello>
 <br />
+<ng-template #under18>
+  <div>You can't see this content</div>
+</ng-template>
 <br />
-<input type="text" [(ngModel)]="user.name" />
+<button type="button" (click)="user.age = user.age - 1">-</button>
+Age: {{ user.age }}
+<button type="button" (click)="user.age = user.age + 1">+</button>
