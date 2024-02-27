@@ -1,1 +1,9 @@
 <app-hello></app-hello>
+<p>Hello {{ user.name }}, ban {{ 24 }} tuoi</p>
+
+<input [type]="inputType" [value]="user.name" />
+
+<button type="button" (click)="Click($event)">Click Me</button>
+<br />
+<br />
+<input type="text" [(ngModel)]="user.name" />
