@@ -4,6 +4,7 @@ import { HelloComponent } from './hello/hello.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { AuthorListComponent } from './author-list/author-list.component';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,9 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     FormsModule,
     CommonModule,
     ProgressBarComponent,
+    AuthorListComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  currentProgress = 10;
-}
+export class AppComponent {}
