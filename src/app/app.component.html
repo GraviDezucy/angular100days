@@ -1,10 +1,31 @@
-<!-- <app-hello *ngIf="user.age >= 18; else under18" [name]="user.name"></app-hello> -->
-<app-hello [hidden]="user.age < 18" [name]="user.name"></app-hello>
-<br />
-<ng-template #under18>
-  <div>You can't see this content</div>
-</ng-template>
-<br />
-<button type="button" (click)="user.age = user.age - 1">-</button>
-Age: {{ user.age }}
-<button type="button" (click)="user.age = user.age + 1">+</button>
+<ul>
+  <li
+    *ngFor="
+      let user of users;
+      index as idx;
+      count as total;
+      first as isFirst;
+      last as isLast;
+      even as isEven;
+      odd as isOdd
+    "
+  >
+    {{ user.id }} - {{ user.name }} - {{ user.phone }} - {{ user.email }}
+    <br />
+    <p>
+      I am at index: {{ idx }} out of {{ total }}
+      <span *ngIf="isFirst"> and at First line</span>
+      <span *ngIf="isLast"> and at Last line</span>
+      <span *ngIf="isEven"> and i am even</span>
+      <span *ngIf="isOdd"> and i am odd</span>
+    </p>
+  </li>
+</ul>
+
+<button
+  type="button"
+  *ngFor="let tag of tags; last as isLast"
+  [class.margin-right]="!isLast"
+>
+  {{ tag }}
+</button>
