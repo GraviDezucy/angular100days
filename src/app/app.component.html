@@ -1,31 +1,8 @@
-<button type="button" (click)="isRed = !isRed">Red</button>
-<button type="button" (click)="isBlue = !isBlue">Blue</button>
-
-<!-- <div class="box" [class.red]="isRed" [class.blue]="isBlue"></div> -->
-<!-- <div class="box" [class]="{ red: isRed, blue: isBlue }"></div> -->
-<!-- <div class="box" [class]="['red', 'blue']"></div> -->
-<!-- <div class="box" [class]="classes"></div> -->
-
-<!-- [class.ten-class]
-[class]="variable"
-[class]=[array]
-[class]="{object}" {'ten-class': boolean} -->
-
-<!-- [style.tenStyle]
-[style.ten-Style]
-[style.tenStyle.unit]
-[style]={object}
-[style.css-variable] -->
-
-<p
-  [style.backgroundColor]="'red'"
-  [style.padding.px]="20"
-  [style]="{
-    border: '3px solid green',
-    fontSize: '2rem',
-    color: 'var(--text-color)'
-  }"
-  [style.--text-color]="isRed ? 'white' : 'yellow'"
->
-  Lorem ipsum sit ames
-</p>
+<app-progress-bar></app-progress-bar>
+<br />
+<!-- <button type="button" (click)="currentProgress = currentProgress + 1">+</button> -->
+<input type="text" [(ngModel)]="currentProgress" />
+<app-progress-bar
+  [progress]="currentProgress"
+  [progressColor]="'dodgerblue'"
+></app-progress-bar>

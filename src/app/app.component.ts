@@ -3,17 +3,21 @@ import { RouterOutlet } from '@angular/router';
 import { HelloComponent } from './hello/hello.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HelloComponent, FormsModule, CommonModule],
+  imports: [
+    RouterOutlet,
+    HelloComponent,
+    FormsModule,
+    CommonModule,
+    ProgressBarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  isRed = false;
-  isBlue = false;
-
-  classes = ['red', 'blue'];
+  currentProgress = 10;
 }
