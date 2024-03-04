@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AuthorListComponent } from './author-list/author-list.component';
+import { ToogleComponent } from './toogle/toogle.component';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,11 @@ import { AuthorListComponent } from './author-list/author-list.component';
     CommonModule,
     ProgressBarComponent,
     AuthorListComponent,
+    ToogleComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {}
+export class AppComponent {
+  isChecked = true;
+}
