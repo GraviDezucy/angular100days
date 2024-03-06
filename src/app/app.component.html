@@ -1,12 +1,25 @@
-<app-toogle #toogleComp [(checked)]="questions.question1">
-  <h2 class="header">Title 1</h2>
-  <span>Question 1</span>
-  <p>Something 1</p>
-</app-toogle>
+<div class="card">
+  <div class="card-header">
+    You have selected
+    <ng-container [ngTemplateOutlet]="tmpl"></ng-container> items.
+  </div>
+  <div class="card-body">
+    There are <ng-container [ngTemplateOutlet]="tmpl"></ng-container> items was
+    selected.
+  </div>
+  <div class="card-footer">
+    You have selected
+    <ng-container [ngTemplateOutlet]="tmpl"></ng-container> items.
+  </div>
+</div>
 
-<app-toogle #toogleComp [(checked)]="questions.question2">
-  <h2 class="header">Title 1</h2>
-  <span>Question 1</span>
-  <p>Something 1</p>
-  <button>Skip</button>
-</app-toogle>
+<ng-template #tmpl>
+  <span class="badge bg-secondary">{{ counter }}</span>
+</ng-template>
+
+<ng-template #linkTemplate let-l>{{ l }}</ng-template>
+
+<app-tabs-component
+  [navs]="navs"
+  [linkTemplate]="linkTemplate"
+></app-tabs-component>

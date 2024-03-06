@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { ToogleComponent } from './toogle/toogle.component';
+import { TabsComponentComponent } from './tabs-component/tabs-component.component';
 
 @Component({
   selector: 'app-root',
@@ -24,13 +25,12 @@ import { ToogleComponent } from './toogle/toogle.component';
     ProgressBarComponent,
     AuthorListComponent,
     ToogleComponent,
+    TabsComponentComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  questions = {
-    question1: true,
-    question2: false,
-  };
+  counter = 1;
+  navs = ['Home', 'Feature', 'Pricing'];
 }
